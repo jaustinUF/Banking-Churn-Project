@@ -1,18 +1,16 @@
 # Banking Churn Prediction Project  
 This is my first 'real-world' project, using data from over 300,000 bank customer accounts:  
-Based on data from the preceding six months, predict account termination in the next three months. The project was originally done for an Italian bank by my ML mentor; I've redone it from the project description and original dataset. (dataset not available as it contains real personal information).
+Based on data from the preceding six months, predict account termination (churn) in the next three months. The original project was for an Italian bank; I've redone it from the project description and original dataset (which is not available for obvious security reasons).
 
 This project deals with two major issues: one technical, the other business-related.
 - The technical issue is the extreme target imbalance: out of 301895 accounts, only 1586 (0.5%) terminated.
 - The business issue relates to the ROI of amelioration: optimizing the threshold (of the probability-score).
-The predictions show marketing (potentially) terminating customers; ROI calculations show the best balance
-between cost of contact and 'cost' of losing an account.
+The predictions identify (potentially) terminating customers for marketing group; ROI calculations show the best balance
+between contact cost versus 'cost' of losing an account.
 
 The scikit-learn DecisionTreeClassifier (DTC) model is used for most of the predicting, but other models are
 examined: BalancedBaggingClassifier, RandomForestClassifier, XGboost, catBoost, lightGBM. Various resampling
-techniques are tested also: undersampling, SMOTE.  
-Comparisons:
-'DecisionTreeClassifier' folder
+techniques are tested also: undersampling, SMOTE. A comparison spreadsheet is in the'DecisionTreeClassifier' folder:
 - DecisionTreeClassifier metrics.docx
 
 Data preparation varies by model: one-hot encoding, missing values, type change, etc.
